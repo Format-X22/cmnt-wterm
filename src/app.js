@@ -2,13 +2,13 @@
  * This call registers your application to be launched when the browser is ready.
  */
 Ext.application({
+    requires: ['Com.view.Main'],
     name: 'Com',
+    mainView: 'Com.view.Main',
 
-    requires: [
-        'Ext.MessageBox'
-    ],
-
-    launch: function () {
-        Ext.Msg.alert('Hello Ext JS', 'Hello! Welcome to Ext JS.');
-    }
+    launch: function() {
+        Ext.Viewport.add({
+            xtype: 'appMain',
+        });
+    },
 });
